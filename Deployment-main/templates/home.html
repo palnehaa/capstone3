@@ -1,0 +1,117 @@
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-color: #03065a;
+  border-style: dotted;
+}
+tr:nth-child(even) {
+  background-color: #d8d7d7;
+}
+body {
+ background-image: url("{{ url_for('static', filename='background.png') }}");
+background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+</head>
+<body >
+	
+
+<div>
+<form action="/result" method="POST">
+<table align=center style="width:%">
+	<th colspan="4" align=center>Joining Prediction Form</th>
+	<tr><td><label for="age">Age</label></td>
+	<td><input type="number" id="age" name="age"  placeholder="Enter Age" required></td>
+	<br>
+	<td><label for="lob">LOB</label></td>
+	<td><select id="lob" name="lob">	
+	<option value="0">AXON</option>
+	<option value="1">BFSI</option>
+	<option value="2">CSMP</option>
+	<option value="3">EAS</option>
+	<option value="4">ERS</option>
+	<option value="5">ETS</option>
+	<option value="6">Healthcare</option>
+	<option value="7">INFRA</option>
+	<option value="8">MMS</option>
+	</select>
+	</td>
+	</tr>
+	<br>
+	<tr>
+	<td><label for="loc">Location</label></td>
+	<td><select id="loc" name="loc">
+	<option value="0">Ahmedabad</option>
+	<option value="1">Bangalore</option>
+	<option value="2">Chennai</option>
+	<option value="3">Cochin</option>
+	<option value="4">Gurgaon</option>
+	<option value="5">Hyderabad</option>
+	<option value="6">Kolkata</option>
+	<option value="7">Mumbai</option>
+	<option value="8">Noida</option>
+	<option value="10">Pune</option>
+	<option value="9">Others</option></td>
+	</select>
+	<br>
+	<td><label for="c_source">Candidate Source</label></td>
+	<td><select id="c_source" name="c_source">
+	<option value="0">Agency</option>
+	<option value="1">Direct</option>
+	<option value="2">Employee Referral</option>
+	</select></td></tr>
+	<br>
+	<tr>
+	<td><label for="ob">Offered Band</label></td>
+	<td><select id="ob" name="ob">
+	<option value="0">E0</option>
+	<option value="1">E1</option>
+	<option value="2">E2</option>
+	</select></td>
+	<br>
+	<td><label for="c_relocate">Candidate can relocate?</label></td>
+	<td><input type="checkbox" id="rely" name="c_relocate" value="1">
+  	<label for="rely">Yes</label>
+  	<input type="checkbox" id="reln" name="c_relocate" value="0">
+ 	<label for="reln">No</label></td>
+	<br>
+	<tr><td><label for="gender">Gender</label></td>
+	<td>
+	
+	<input type="radio" id="male" name="gender" value="1">
+	<label for="male">Male</label>
+	<input type="radio" id="female" name="gender" value="0">
+	<label for="female">Female</label></td>
+	<br>
+	<td><label for="doj">Is Date of Joining Extended?</label></td>
+	<td>
+	<input type="checkbox" id="dojy" name="doj" value="1">
+  	<label for="dojy">Yes</label>
+  	<input type="checkbox" id="dojn" name="doj" value="0">
+ 	<label for="dojn">No</label></td></tr>
+	<br>
+	<tr>
+	<td><label for="duration">Duration to accept offer(in days) </label></td>
+	<td><input type="number" id="duration" name="duration"  placeholder="Enter No. of days" required></td>
+	<br>
+	<td><label for="np">Notice Period </label></td>
+	<td><input type="number" id="np" name="np" placeholder="Enter No. of days" required></td></tr>
+	<br>
+	<tr><td>
+	<label for="pct_diff">Percent Difference in CTC</label></td>
+	<td><input type='text' id="pct_diff" name="pct_diff" placeholder="Enter % Hike difference" required></td>
+	<br>
+	<td><label for="exp">Expirience(in years) </label></td>
+	<td><input type="number" id="exp" name="exp" placeholder="Enter Years of Exp" required></td></tr>
+	<br>
+	<tr><td  colspan="4" align=center>
+	<input type="submit" value="Submit"></td></tr>
+</table>
+<div style="text-align: center;"><h3> {{ prediction }} </h3></div>
+</form>
+</div>
+</body>
+</html>
